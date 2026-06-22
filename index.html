@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Senhas Seguras</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gerador de Senhas</h1>
+        
+        <!-- Área da senha gerada -->
+        <div class="senha-gerada">
+            <input type="text" id="senha" readonly>
+            <button id="copiar" onclick="copiarSenha()">📋 Copiar</button>
+        </div>
+
+        <!-- Controles de quantidade -->
+        <div class="controles">
+            <label>Quantidade de caracteres:</label>
+            <div class="botoes-quantidade">
+                <button id="btnMenos" onclick="diminuir()">-</button>
+                <span id="quantidade">12</span>
+                <button id="btnMais" onclick="aumentar()">+</button>
+            </div>
+        </div>
+
+        <!-- Checkboxes de características -->
+        <div class="caracteristicas">
+            <div class="coluna">
+                <input type="checkbox" id="maiusculas" checked>
+                <label for="maiusculas">Maiúsculas (A-Z)</label>
+            </div>
+            <div class="coluna">
+                <input type="checkbox" id="minusculas" checked>
+                <label for="minusculas">Minúsculas (a-z)</label>
+            </div>
+            <div class="coluna">
+                <input type="checkbox" id="numeros" checked>
+                <label for="numeros">Números (0-9)</label>
+            </div>
+            <div class="coluna">
+                <input type="checkbox" id="simbolos">
+                <label for="simbolos">Símbolos (!@#$%)</label>
+            </div>
+        </div>
+
+        <!-- Barra de força -->
+        <div class="forca-container">
+            <p>Força da senha:</p>
+            <div class="barra-forca">
+                <div id="barra" class="forca-fraca">Fraca</div>
+            </div>
+            <p id="entropia">Tempo para quebrar: ~0 dias</p>
+        </div>
+
+        <!-- Botão gerar -->
+        <button id="btnGerar" onclick="gerarSenha()">🔄 Gerar Nova Senha</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
